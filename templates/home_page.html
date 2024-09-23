@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}Home Page{% endblock %}</title>
+</head>
+<body>
+    <div id="menu">
+        <a href="{% url 'home_page' %}">Home</a>
+        <a href="{% url 'faculties' %}">Faculties</a>
+        <a href="{% url 'students' %}">Students</a>
+        <a href="{% url 'kafedras' %}">Kafedras</a>
+        <a href="{% url 'subjects' %}">Subjects</a>
+        <a href="{% url 'teachers' %}">Teachers</a>
+        <a href="{% url 'groups' %}">Groups</a>
+    </div>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

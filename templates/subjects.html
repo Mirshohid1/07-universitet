@@ -1,0 +1,18 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+Subjects
+{% endblock %}
+
+{% block content %}
+    <h1>Subjects</h1>
+    {% for subject in subjects %}
+        <p><b>Name: {{ subject.name }}</b></p>
+        {% if subject.kafedra %}
+            <p style="color: green;">Kafedra: {{ subject.kafedra.name }}</p>
+        {% else %}
+            <p style="color: red;">Kafedra yo'q</p>
+        {% endif %}
+        <p>-------------------------------</p>
+    {% endfor %}
+{% endblock %}

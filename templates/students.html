@@ -1,0 +1,19 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+Students
+{% endblock %}
+
+{% block content %}
+    <h1>Students</h1>
+    {% for student in students %}
+        <p><b>Name: {{ student.first_name }} {{ student.last_name }}</b></p>
+        <p>Bio: {{ student.bio }}</p>
+        {% if student.group %}
+            <p style="color: green;">Group: {{ student.group.name }}</p>
+        {% else %}
+            <p style="color: red">Group yo'q</p>
+        {% endif %}
+        <p>-------------------------------</p>
+    {% endfor %}
+{% endblock %}

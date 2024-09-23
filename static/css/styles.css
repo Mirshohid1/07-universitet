@@ -1,0 +1,38 @@
+/* Основные стили для меню */
+#menu {
+    background-color: #333; /* Тёмный фон */
+    overflow: hidden; /* Чтобы элементы не вылезали за пределы контейнера */
+    padding: 10px;
+    text-align: center; /* Центровка элементов по горизонтали */
+}
+
+/* Стили для ссылок в меню */
+#menu a {
+    color: white; /* Белый цвет текста для контраста */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    padding: 14px 20px; /* Отступы внутри ссылок */
+    display: inline-block; /* Отображение в строку */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Анимация при наведении */
+}
+
+/* Стили для ссылок при наведении мыши */
+#menu a:hover {
+    background-color: #575757; /* Цвет фона при наведении */
+    border-radius: 5px; /* Округление углов */
+}
+
+/* Дополнительные стили для активных ссылок */
+#menu a:active {
+    background-color: #4CAF50; /* Зелёный цвет при нажатии */
+}
+
+/* Для адаптации на мобильных устройствах */
+@media (max-width: 600px) {
+    #menu a {
+        display: block; /* Строки делаются блочными для мобильной версии */
+        text-align: center;
+        padding: 10px;
+    }
+}

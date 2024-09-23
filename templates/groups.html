@@ -1,0 +1,28 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+Groups
+{% endblock %}
+
+{% block content %}
+    <h1>Groups</h1>
+    {% for group in groups %}
+        <p><b>Name: {{ group.name }}</b></p>
+        {% if group.kafedra %}
+            <p style="color: green;">Kafedra: {{ group.kafedra.name }}</p>
+        {% else %}
+            <p style="color: red;">Kafedra yo'q</p>
+        {% endif %}
+        {% if group.teacher %}
+            <p style="color: green;">Teacher: {{ group.teacher.first_name }} {{ group.teacher.last_name }}</p>
+        {% else %}
+            <p style="color: red;">Teacher yo'q</p>
+        {% endif %}
+        {% if group.subject %}
+            <p style="color: green;">Subject: {{ group.subject.name }}</p>
+        {% else %}
+            <p style="color: red;">Subject yo'q</p>
+        {% endif %}
+        <p>-------------------------------</p>
+    {% endfor %}
+{% endblock %}

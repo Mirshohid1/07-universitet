@@ -1,0 +1,18 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+Kafedras
+{% endblock %}
+
+{% block content %}
+    <h1>Kafedras</h1>
+    {% for kafedra in kafedras %}
+        <p><b>Name: {{ kafedra.name }}</b></p>
+        {% if kafedra.faculty %}
+            <p style="color: green;">Faculty: {{ kafedra.faculty.name }}</p>
+        {% else %}
+            <p style="color: red;">Faculty yo'q</p>
+        {% endif %}
+        <p>-------------------------------</p>
+    {% endfor %}
+{% endblock %}

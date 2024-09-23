@@ -1,0 +1,23 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+Teachers
+{% endblock %}
+
+{% block content %}
+    <h1>Teachers</h1>
+    {% for teacher in teachers %}
+        <p><b>Name: {{ teacher.first_name }} {{ teacher.last_name }}</b></p>
+        {% if teacher.kafedra %}
+            <p style="color: green;">Kafedra: {{ teacher.kafedra.name }}</p>
+        {% else %}
+            <p style="color: red;">Kafedra yo'q</p>
+        {% endif %}
+        {% if teacher.subject %}
+            <p style="color: green;">Subject: {{ teacher.subject.name }}</p>
+        {% else %}
+            <p style="color: red;">Subject yo'q</p>
+        {% endif %}
+        <p>-------------------------------</p>
+    {% endfor %}
+{% endblock %}
